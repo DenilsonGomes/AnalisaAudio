@@ -1,7 +1,10 @@
 % Autor: Denilson Gomes Vaz da Silva
 % Departamento de Engenharia de Computação
-%Processamento Digital de Sinais
+% Processamento Digital de Sinais
 % Script para carregar e executar o audio "train.mat"
+
+clear
+clc
 
 load train
 

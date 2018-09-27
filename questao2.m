@@ -1,7 +1,10 @@
 % Autor: Denilson Gomes Vaz da Silva
 % Departamento de Engenharia de Computação
-%Processamento Digital de Sinais
+% Processamento Digital de Sinais
 % Script para visualizar o sinal no tempo e na frequencia
+
+clear
+clc
 
 load train
 plot(y) %Plota o sinal

@@ -1,11 +1,7 @@
 % Autor: Denilson Gomes Vaz da Silva
 % Departamento de Engenharia de Computação
-%Processamento Digital de Sinais
+% Processamento Digital de Sinais
 % Script para acrescentar ruido branco
-
-clear
-clc
-load train
 
 % Gerar o ruido
 ruido_branco = randn(size(y)); %ruido
@@ -37,18 +33,3 @@ xlabel('Frequencia')
 sound(y,Fs) %reproduz o sinal
 
 sound(y_ruido) %reproduz o sinal com ruido
-
-% Filtrar o sinal com ruido
-% y_ruido_filtrado = filter(B,A,y_ruido); %Filtra o sinal com ruido
-% figure,plot(n,y_ruido_filtrado) %Plota o sinal filtrado
-% ylabel('Amplitude do sinal Filtrado')
-% xlabel('tempo')
-% 
-% ruidoW = fftshift(fft(y_ruido_filtrado)); %Transformada de Fourier do sinal filtrado
-% figure,plot(freq_vec,abs(ruidoW)) %plota o modulo do sinal filtrado
-% ylabel('Espectro de magnitude do sinal com ruido filtrado')
-% xlabel('Frequencia')
-% 
-% figure,plot(freq_vec,angle(ruidoW)) %plota a fase do sinal filtrado
-% ylabel('Fase do sinal com ruido filtrado')
-% xlabel('Frequencia')
