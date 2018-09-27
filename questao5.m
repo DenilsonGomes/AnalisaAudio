@@ -7,3 +7,5 @@ zplane(B,A) %plota filtro passa-faixa no plano complexo
 title('Polos e Zeros do Filtro') %Titulo
 ylabel('Imaginario') %legenda
 xlabel('Real') %legenda
+
+% A partir do grafico sabemos que o filtro eh IIR
