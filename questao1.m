@@ -19,3 +19,5 @@ Fs = Fs/m; %muda a frequencia
 
 %reproduz o audio na nova frequencia
 sound(y,Fs)
+
+% Percebemos que o audio muda quando a frequencia muda
