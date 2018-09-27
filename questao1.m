@@ -6,13 +6,14 @@
 clear
 clc
 
-load train
+%load train
+load chirp
 
 %reproduz o audio na frequencia normal
 sound(y,Fs)
 
 %recebe o multiplo da frequencia normal
-m = input('Digite o multiplo da frequencia que deseja ouvir o audio: ');
+m = input('Digite o divisor da frequencia que deseja ouvir o audio: ');
 y = y(:,1);
 y = y(1:m:end); %muda a amostragem do sinal
 Fs = Fs/m; %muda a frequencia
