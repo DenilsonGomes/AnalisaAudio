@@ -4,3 +4,6 @@
 % Script para visualizar diagrama de polos e zeros
 
 zplane(B,A) %plota filtro passa-faixa no plano complexo
+title('Polos e Zeros do Filtro') %Titulo
+ylabel('Imaginario') %legenda
+xlabel('Real') %legenda
