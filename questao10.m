@@ -9,6 +9,7 @@ clear
 clc
 
 %#1
+% É notorio que o audio muda de acordo com a frequencia
 load chirp %carrega o sinal
 
 %reproduz o audio na frequencia normal
@@ -40,6 +41,7 @@ ylabel('Espectro de magnitude')
 xlabel('Frquencia em Rad/s')
 
 %#3
+% Escutando o sinal ruidoso percebemos que o ruido se misturou com o sinal
 % Gerar o ruido
 ruido_branco = randn(size(y)); %ruido
 ruido_branco = (ruido_branco - mean(ruido_branco))/10*std(ruido_branco); %ruido com media 0 e variança 0.1
@@ -71,18 +73,18 @@ ylabel('Modulo do sinal com ruido')
 xlabel('Frequencia')
 
 %reproduzir os sinais
-sound(y,Fs) %reproduz o sinal
+sound(ruido_branco,Fs) %reproduz o sinal
 
 sound(y_ruido) %reproduz o sinal com ruido
 
 %#4
-% Analisando a tranformada de Fourier do sinal conseguimos vizaulizar que a
-% parte mais significativo do audio ocorre com frequencias acima de 1.5,
-% que resulta em 0.48. Dessa forma um bom filtro para tirar o ruido adiocionado é um Filtro
-% Passa-Alta, aceitando w>0.48.
+% Analisando a tranformada de Fourier do sinal conseguimos vizualizar que a
+% parte mais significativo do audio ocorre com frequencias acima de 1.5.
+% Dessa forma um bom filtro para tirar o ruido adiocionado é um Filtro
+% Passa-Alta, aceitando w>1.5.
 
-wc1 = 0.48; %Frquencia final
-[B,A] = butter(20, wc1, 'high');
+wc1 = 1.5; %Frquencia final
+[B,A] = butter(20, 1.5/pi, 'high');
 [H,W] = freqz(B,A,length(y));
 figure,plot(W,abs(H)) %Plota filtro Passa-Faixa
 title('Transformada de Fourier do Filtro') %Titulo
@@ -96,6 +98,7 @@ ylabel('Amplitude') %legenda
 xlabel('Tempo discreto') %legenda
 
 %#5
+% De acordo com os graficos é possivel observar que o filtro obtido é IIR
 zplane(B,A) %plota filtro passa-faixa no plano complexo
 title('Polos e Zeros do Filtro') %Titulo
 ylabel('Imaginario') %legenda
@@ -120,5 +123,7 @@ ylabel('Espectro de magnitude') %legenda
 xlabel('Frequencia em Rad/s') %legenda
 
 %#8
+% Executando o sinal ruidoso escutamos um ruido junto com o sinal.
+% Executando o sinal filtrado escutamos o sinal limpo, sem ruido.
 sound(y_ruido,Fs) %reproduz audio ruidoso
 sound(y_filt,Fs) %reproduz audio filtrado
