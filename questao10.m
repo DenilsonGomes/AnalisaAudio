@@ -99,7 +99,7 @@ xlabel('Tempo discreto') %legenda
 
 %#5
 % De acordo com os graficos é possivel observar que o filtro obtido é IIR
-zplane(B,A) %plota filtro passa-faixa no plano complexo
+figure,zplane(B,A) %plota filtro passa-faixa no plano complexo
 title('Polos e Zeros do Filtro') %Titulo
 ylabel('Imaginario') %legenda
 xlabel('Real') %legenda
