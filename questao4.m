@@ -23,6 +23,13 @@ title('Sinal Filtrado no tempo') %Titulo
 ylabel('Amplitude do Sinal Filtrado') %legenda
 xlabel('Tempo discreto') %legenda
 
+Yw_filt = fftshift(fft(y_filt)); %TF centrada no zero do sinal filtrado
+freq_vec = linspace(-pi,pi,length(Yw_filt)); %Frequencias
+figure,plot(freq_vec,abs(Yw_filt)) %Plota TF do sinal filtrado
+title('Transformada de Foutier do Sinal Filtrado') %Titulo
+ylabel('Espectro de magnitude') %legenda
+xlabel('Frequencia em Rad/s') %legenda
+
 sound(y_ruido,Fs) %reproduz audio ruidoso
 sound(y_filt,Fs) %reproduz audio filtrado
 
