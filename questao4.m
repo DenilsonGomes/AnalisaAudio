@@ -25,3 +25,9 @@ xlabel('Tempo discreto') %legenda
 
 sound(y_ruido,Fs) %reproduz audio ruidoso
 sound(y_filt,Fs) %reproduz audio filtrado
+
+[H,W] = impz(B,A,length(y)); %resposta ao impulso do filtro
+figure,plot(W,abs(H)) %plota a resposta ao impulso do filtro
+title('Resposta ao Impulso') %Titulo
+ylabel('Amplitude') %legenda
+xlabel('Tempo discreto') %legenda
