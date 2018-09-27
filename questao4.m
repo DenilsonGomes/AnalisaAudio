@@ -4,13 +4,13 @@
 % Script para implementar filtro para remover o ruido do sinal
 % 
 % Analisando a TF do sinal percebemos que o sinal "train" tem suas componentes
-%mais fortes nas frequencias entre 0.4 e 1.8, que resulta [0.13,0.6]. Logo
+%mais fortes nas frequencias entre 0.4 e 1.8. Logo
 %um bom jeito de tirar o ruido é um filtro Passa-Faixa com 0.13<w<0.6
 
 %Filtro Passa-Faixa
-wc1 = 0.13; %Frquencia inicial
-wc2 = 0.57; %Frquencia final
-[B,A] = butter(20, [wc1,wc2]);
+wc1 = 0.4; %Frquencia inicial
+wc2 = 1.8; %Frquencia final
+[B,A] = butter(20, [wc1/pi,wc2/pi]);
 [H,W] = freqz(B,A,length(y));
 figure,plot(W,abs(H)) %Plota filtro Passa-Faixa
 title('Transformada de Fourier do Filtro') %Titulo
