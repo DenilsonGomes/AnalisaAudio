@@ -3,9 +3,9 @@
 % Processamento Digital de Sinais
 % Script para implementar filtro para remover o ruido do sinal
 % 
-% Analisando a TF do sinal e/ou do sinal ruidoso percebemos que o sinal
-% "train" tem suas componentes mais fortes nas frequencias entre 0.4 e 1.8
-% que resulta [0.13,0.6]
+% Analisando a TF do sinal percebemos que o sinal "train" tem suas componentes
+%mais fortes nas frequencias entre 0.4 e 1.8, que resulta [0.13,0.6]. Logo
+%um bom jeito de tirar o ruido é um filtro Passa-Faixa com 0.13<w<0.6
 
 %Filtro Passa-Faixa
 wc1 = 0.13; %Frquencia inicial
