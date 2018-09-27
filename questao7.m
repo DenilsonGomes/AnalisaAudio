@@ -15,6 +15,3 @@ figure,plot(freq_vec,abs(Yw_filt)) %Plota TF do sinal filtrado
 title('Transformada de Foutier do Sinal Filtrado') %Titulo
 ylabel('Espectro de magnitude') %legenda
 xlabel('Frequencia em Rad/s') %legenda
-
-sound(y_ruido,Fs) %reproduz audio ruidoso
-sound(y_filt,Fs) %reproduz audio filtrado
