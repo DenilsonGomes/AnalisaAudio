@@ -6,8 +6,7 @@
 clear
 clc
 
-%load train
-load chirp
+load train
 
 %reproduz o audio na frequencia normal
 sound(y,Fs)
